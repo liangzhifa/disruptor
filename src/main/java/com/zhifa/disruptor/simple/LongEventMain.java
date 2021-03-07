@@ -2,9 +2,7 @@ package com.zhifa.disruptor.simple;
 
 import com.lmax.disruptor.EventFactory;
 import com.lmax.disruptor.RingBuffer;
-import com.lmax.disruptor.YieldingWaitStrategy;
 import com.lmax.disruptor.dsl.Disruptor;
-import com.lmax.disruptor.dsl.ProducerType;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;

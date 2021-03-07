@@ -1,1 +1,35 @@
-
+server:
+  port: 80
+  servlet:
+    context-path: /
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url:  jdbc:mysql://47.100.45.101:3306/wxgzh?serverTimezone=Asia/Shanghai&useAffectedRows=true&useSSL=true&characterEncoding=utf8
+    password: zhifa123
+    username: root
+    hikari:
+      max-lifetime: 1200000
+    dbcp2:
+      validation-query: select 1 from dual
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  typeAliasesPackage: com.zhifa.disruptor.domain
+  configuration:
+    map-underscore-to-camel-case: true
+#mybatis的sql日志打印
+logging:
+  level:
+    com.zhifa.wxgzh.mapper: debug
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
